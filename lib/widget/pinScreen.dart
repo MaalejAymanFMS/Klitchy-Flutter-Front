@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:klitchyapp/config/app_colors.dart';
+import 'package:klitchyapp/utils/responsive.dart';
 import 'package:klitchyapp/utils/size_utils.dart';
 import 'package:klitchyapp/views/gestion_de_table.dart';
 import 'package:klitchyapp/views/kitchen.dart';
@@ -48,8 +49,8 @@ class _PinScreenState extends State<PinScreen> {
         margin: const EdgeInsets.all(16.0),
         child: Container(
           
-          width: 700.h,
-          height: 700.v,
+          width:Responsive.isDesktop(context)? 700:Responsive.isTablet(context) ? 500 : 300,
+          height: 500,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -63,8 +64,8 @@ class _PinScreenState extends State<PinScreen> {
                   for (int i = 0; i < 4; i++)
                     Container(
                       margin: const EdgeInsets.all(8.0),
-                      width: 40.h,
-                      height: 40.v,
+                      width: Responsive.isDesktop(context)? 60.h:Responsive.isTablet(context) ? 40.h : 20.h,
+                      height: Responsive.isDesktop(context)? 60.v:Responsive.isTablet(context) ? 40.v : 20.v,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: i < filledCircles

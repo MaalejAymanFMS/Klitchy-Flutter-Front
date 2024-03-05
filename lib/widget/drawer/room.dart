@@ -26,7 +26,7 @@ class Room extends StatelessWidget {
               child: Image.asset("assets/images/logo.png"),
             ),
             SizedBox(
-              width: 10.h,
+              width: 10,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,30 +34,30 @@ class Room extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.white, fontSize: 17.fSize),
+                      fontWeight: FontWeight.bold, color: Colors.white, fontSize: 12),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: 10.h,
-                      height: 10.v,
+                      width: 8,
+                      height: 8,
                       decoration: const BoxDecoration(
                           color: Colors.green, shape: BoxShape.circle),
                     ),
                     SizedBox(
-                      width: 5.h,
+                      width: 5,
                     ),
                     Text("online",
                         style: TextStyle(
                             fontWeight: FontWeight.normal,
-                            color: AppColors.secondaryTextColor, fontSize: 15.5.fSize)),
+                            color: AppColors.secondaryTextColor, fontSize: 10)),
                   ],
                 ),
               ],
             ),
             const Spacer(),
-            Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 25.fSize),
+            Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 15),
 
           ],
         ),

@@ -19,26 +19,21 @@ class _TopMenuDrawerState extends State<TopMenuDrawer> {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: 10.h,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("GameOn", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20.fSize)),
-              SizedBox(
-                height: 5.v,
-              ),
-              Text("Coffee shop", style: TextStyle(fontWeight: FontWeight.normal, color: AppColors.secondaryTextColor, fontSize: 20.fSize)),
-            ],
-          )
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+     
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("GameOn", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 12)),
+            SizedBox(
+              height: 5,
+            ),
+            Text("Coffee shop", style: TextStyle(fontWeight: FontWeight.normal, color: AppColors.secondaryTextColor, fontSize: 12)),
+          ],
+        )
+      ],
     );
   }
 }

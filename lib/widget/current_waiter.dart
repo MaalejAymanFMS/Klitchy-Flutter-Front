@@ -34,8 +34,8 @@ class CurrentWaiter extends StatelessWidget {
               BorderRadius.circular(16),
             ),
             child: SizedBox(
-              width: 300.h,
-              height: 100.v,
+              width: 300,
+              height: 100,
               child: Center(
                 child: ListTile(
                   dense: true,
@@ -52,9 +52,9 @@ class CurrentWaiter extends StatelessWidget {
                   },
                   title: Text(
                     "Logout",
-                    style: TextStyle(fontSize: 17.fSize, fontWeight: FontWeight.bold)
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)
                   ),
-                  trailing: Icon(Icons.logout, size: 30.fSize, color: AppColors.redColor,),
+                  trailing: Icon(Icons.logout, size: 30, color: AppColors.redColor,),
                 ),
               ),
             ),
@@ -62,15 +62,15 @@ class CurrentWaiter extends StatelessWidget {
         );
       },
       child: SizedBox(
-        width: 220.h,
-        height: 50.v,
+        width: 220,
+        height: 50,
         child: Row(
           children: [
             CircleAvatar(
               child: Image.asset("assets/images/waiter.png"),
             ),
             SizedBox(
-              width: 19.h,
+              width: 19,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,29 +79,29 @@ class CurrentWaiter extends StatelessWidget {
                 Text(
                   name,
                   style:
-                      TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15.fSize),
+                      TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 12),
                 ),
                 Row(
                   children: [
                     Container(
-                      width: 10.h,
-                      height: 10.v,
+                      width: 10,
+                      height: 10,
                       decoration: const BoxDecoration(
                           color: Colors.green, shape: BoxShape.circle),
                     ),
                     SizedBox(
-                      width: 5.h,
+                      width: 5,
                     ),
                     Text("Active Now",
                         style: TextStyle(
                             fontWeight: FontWeight.normal,
-                            color: AppColors.secondaryTextColor, fontSize: 15.fSize)),
+                            color: AppColors.secondaryTextColor, fontSize: 12)),
                   ],
                 ),
               ],
             ),
             const Spacer(),
-            Icon(Icons.logout, size: 25.fSize, color: AppColors.redColor,),
+            Icon(Icons.logout, size: 25, color: AppColors.redColor,),
           ],
         ),
       ),

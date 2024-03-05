@@ -61,16 +61,17 @@ class _LeftDrawerState extends State<LeftDrawer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200.h,
+
       color: AppColors.primaryColor,
       child: Padding(
         padding: EdgeInsets.only(top: 10.v),
         child: ListView(
           children: [
-            TopMenuDrawer(widget.onTap),
-            SizedBox(
-              height: 40.v,
-            ),
+         
+    Responsive.isMobile(context)? Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TopMenuDrawer(widget.onTap),
+    ):SizedBox(),
             Divider(
               height: 1.v,
               thickness: 1,

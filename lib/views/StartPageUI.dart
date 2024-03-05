@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:klitchyapp/models/tables.dart';
 import 'package:klitchyapp/utils/AppState.dart';
+import 'package:klitchyapp/utils/responsive.dart';
 import 'package:klitchyapp/utils/size_utils.dart';
 import 'package:klitchyapp/viewmodels/right_drawer_vm.dart';
 import 'package:klitchyapp/viewmodels/start_page_interractor.dart';
@@ -261,12 +262,15 @@ class StartPageUIState extends State<StartPageUI> {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
+    double cardWidth = MediaQuery.of(context).size.width / 3.5;
+double cardHeight = MediaQuery.of(context).size.height / 3;
     return Center(
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-              height: (152 * 6).v,
-              width: (260 * 4).h,
+              height: MediaQuery.of(context).size.height * 0.8,
+              width:   Responsive.isMobile(context) ?MediaQuery.of(context).size.width*0.9: MediaQuery.of(context).size.width * 0.6,
               decoration: const BoxDecoration(
                 color: Color(0xFF0E1227),
                 borderRadius: BorderRadius.all(
@@ -277,7 +281,7 @@ class StartPageUIState extends State<StartPageUI> {
                   ? GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 6,
-                        childAspectRatio: 130.h / 95.v,
+                        childAspectRatio: cardWidth / cardHeight,
                       ),
                       itemCount: 6 * 6,
                       itemBuilder: (BuildContext context, int index) {
@@ -499,15 +503,15 @@ class StartPageUIState extends State<StartPageUI> {
                       : CheckoutScreen(
                           appState: appState,
                         )),
-          SizedBox(
-            width: appState.isWidgetEnabled ? 12.h : 12.h,
-          ),
+          // SizedBox(
+          //   width: appState.isWidgetEnabled ? 12.h : 12.h,
+          // ),
           !widget.room
               ? RightDrawerVM(tableName, tableId, appState)
-              : appState.tableTimer.isNotEmpty
-                  ? TableRightDrawer(
-                      appState: appState,
-                    )
+              // : appState.tableTimer.isNotEmpty
+              //     ? TableRightDrawer(
+              //         appState: appState,
+              //       )
                   : const SizedBox(),
         ],
       ),

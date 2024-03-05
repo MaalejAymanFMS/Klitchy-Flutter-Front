@@ -40,13 +40,13 @@ class RoomsState extends State<Rooms> {
               Text(
                 "Rooms",
                 style:
-                    TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 17.fSize),
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 12),
               ),
               Text(
                 "${widget.numberOfRooms} rooms",
                 style: TextStyle(
                     fontWeight: FontWeight.normal,
-                    color: AppColors.secondaryTextColor, fontSize: 17.fSize),
+                    color: AppColors.secondaryTextColor, fontSize: 12),
               ),
             ],
           ),
