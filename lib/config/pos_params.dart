@@ -4,7 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class PosParams{
   
-  static late String? ngrokURL ;
+  static late String ngrokURL ;
   static late String erpnextURL ;
   static late String token ;
   static late String comapny ;

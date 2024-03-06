@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
     final headers = {
       'Authorization': '${PosParams.token}',
     };
-    const url =
+     var url =
         '${PosParams.erpnextURL}/api/resource/User?fields=["first_name","email"]&filters=[["full_name", "LIKE", "%waiter%"]]';
 
     try {

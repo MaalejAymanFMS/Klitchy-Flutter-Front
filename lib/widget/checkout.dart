@@ -98,7 +98,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   void createInvoice() async {
     print("createInvoice");
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    const String url =
+     String url =
         '${PosParams.erpnextURL}/api/resource/POS%20Invoice';
     try {
       final token = prefs.getString("token");
