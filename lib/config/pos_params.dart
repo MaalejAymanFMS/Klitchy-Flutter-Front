@@ -4,10 +4,10 @@ class PosParams{
   static const String token = "token 1e36fdb116a0d37:cf66f1ad25b58ba";
   static const String comapny = "Jumpark";
   static const String productFilter = '';
-  static const String stores = "Stores - JP";
-  static const String cash = "Cash - JP";
-  static const String sales = "Sales - JP";
-  static const String main = "Main - JP";
-  static const String debtors = "Debtors - JP";
-  static const String bank = "BTE - JP";
+  static const String stores = "Stores_JP";
+  static const String cash = "Cash_JP";
+  static const String sales = "Sales_JP";
+  static const String main = "Main_JP";
+  static const String debtors = "Debtors_JP";
+  static const String bank = "BTE_JP";
 }
