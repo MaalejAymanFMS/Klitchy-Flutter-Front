@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:klitchyapp/routes/routes.dart';
 import 'package:klitchyapp/utils/locator.dart';
 import 'package:klitchyapp/views/kitchen.dart';
@@ -8,6 +9,7 @@ import 'package:klitchyapp/utils/AppState.dart' as UtilAppState;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: "lib/.env");
   setupLocator();
   runApp(const MyApp());
 }
