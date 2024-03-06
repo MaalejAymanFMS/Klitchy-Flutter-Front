@@ -16,7 +16,7 @@ class PosParams{
   static late String debtors ;
   static late String bank ;
   static Future<void> initialize() async {
-    await dotenv.load(fileName: "../../.env");
+    await dotenv.load(fileName: "/.env");
     ngrokURL = dotenv.env['ngrokURL']!;
     erpnextURL = dotenv.env['erpnextURL']!;
     token = dotenv.env['token']!;
