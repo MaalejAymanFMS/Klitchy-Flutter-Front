@@ -24,7 +24,7 @@ class KitchenVMState extends State<KitchenVM> implements KitchenInteractor {
   Future<List<Order>> fetchOrder() async {
     final response = await http.get(
       Uri.parse(
-          '${PosParams.ngrokURL}/orders/orders-by-status/wannaStart/'),
+          '${PosParams.apiURL}/orders/orders-by-status/wannaStart/'),
     );
 
     if (response.statusCode == 200) {
@@ -82,7 +82,7 @@ class KitchenVMState extends State<KitchenVM> implements KitchenInteractor {
 
   @override
   Future<void> startOrder(String id) async {
-    String url = '${PosParams.ngrokURL}/api/orders/$id/';
+    String url = '${PosParams.apiURL}/api/orders/$id/';
     Map<String, String> headers = {
       'Content-Type': 'application/json',
     };
@@ -153,7 +153,7 @@ class KitchenVMState extends State<KitchenVM> implements KitchenInteractor {
     Set<Order> uniqueOrders = <Order>{};
     final response = await http.get(
       Uri.parse(
-          '${PosParams.ngrokURL}/orders/orders-by-status/progress/'),
+          '${PosParams.apiURL}/orders/orders-by-status/progress/'),
     );
 
     if (response.statusCode == 200) {
@@ -217,7 +217,7 @@ inPrgressOrders = uniqueOrders.toList();
     Set<Order> uniqueOrders = <Order>{};
     final response = await http.get(
       Uri.parse(
-          '${PosParams.ngrokURL}/orders/orders-by-status/done/'),
+          '${PosParams.apiURL}/orders/orders-by-status/done/'),
     );
 
     if (response.statusCode == 200) {
@@ -279,7 +279,7 @@ inPrgressOrders = uniqueOrders.toList();
   @override
   Future<void> updateStatusOrder(String id) async {
     print(id);
-    String url = '${PosParams.ngrokURL}/api/orders/$id/';
+    String url = '${PosParams.apiURL}/api/orders/$id/';
 
     Map<String, String> headers = {
       'Content-Type': 'application/json',
@@ -343,7 +343,7 @@ inPrgressOrders = uniqueOrders.toList();
 
   void postOrder(Order order) async {
     final url =
-        Uri.parse('${PosParams.ngrokURL}/api/orders/');
+        Uri.parse('${PosParams.apiURL}/api/orders/');
     final data = {"order_id": order.name, "status_kds": "wannaStart"};
 
     final response = await http.post(

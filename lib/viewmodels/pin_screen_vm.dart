@@ -26,9 +26,11 @@ class PinScreenVMState extends State<PinScreenVM> implements PinScreenInteractor
   @override
   Future<User> retrieve(String pin) async {
     final response = await http
-         .get(Uri.parse("${PosParams.ngrokURL}/user/get_user_by_pin/$pin")
+         .post(Uri.parse("${PosParams.apiURL}/api/v1/authentication/login/pos/pin/")
         ,headers: {
           "Access-Control-Allow-Origin":"*"
+        },body: {
+          "pin":pin
         });
     debugPrint(response.statusCode.toString());
 

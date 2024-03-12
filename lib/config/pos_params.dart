@@ -4,7 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class PosParams{
   
-  static late String ngrokURL ;
+  static late String apiURL ;
   static late String erpnextURL ;
   static late String token ;
   static late String comapny ;
@@ -17,7 +17,7 @@ class PosParams{
   static late String bank ;
   static Future<void> initialize() async {
     await dotenv.load(fileName: "/.env");
-    ngrokURL = dotenv.env['ngrokURL']!;
+    apiURL = dotenv.env['apiURL']!;
     erpnextURL = dotenv.env['erpnextURL']!;
     token = dotenv.env['token']!;
     comapny = dotenv.env['comapny']!;
