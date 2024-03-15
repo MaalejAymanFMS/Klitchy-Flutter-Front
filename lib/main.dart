@@ -13,7 +13,6 @@ void main() async {
   await PosParams.initialize();
   print(PosParams.apiURL);
  setupLocator();
-await dotenv.load(fileName: ".env");
 
   setupLocator();
 
