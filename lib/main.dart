@@ -14,6 +14,9 @@ void main() async {
   print(PosParams.apiURL);
  setupLocator();
 await dotenv.load(fileName: ".env");
+
+  setupLocator();
+
   runApp(const MyApp());
 }
 
