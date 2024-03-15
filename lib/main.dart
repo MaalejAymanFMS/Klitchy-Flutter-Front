@@ -11,14 +11,14 @@ import 'package:klitchyapp/utils/AppState.dart' as UtilAppState;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await PosParams.initialize();
+  print(PosParams.apiURL);
  setupLocator();
-
+await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
