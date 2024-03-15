@@ -13,9 +13,6 @@ void main() async {
   await PosParams.initialize();
   print(PosParams.apiURL);
  setupLocator();
-
-  setupLocator();
-
   runApp(const MyApp());
 }
 
