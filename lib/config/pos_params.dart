@@ -2,6 +2,8 @@
 
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+import '../utils/constants.dart';
+
 class PosParams{
   
   static  String? apiURL ;
@@ -16,7 +18,7 @@ class PosParams{
   static  String? debtors ;
   static  String? bank ;
   static Future<void> initialize() async {
-    await dotenv.load(fileName: "/.env");
+    await dotenv.load(fileName: "${assetsMode}.env");
     apiURL = dotenv.env['apiURL']??"";
     erpnextURL = dotenv.env['erpnextURL']??"";
     token = dotenv.env['token']??"";

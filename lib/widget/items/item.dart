@@ -174,7 +174,7 @@ class ItemState extends State<Item> {
                             fit: BoxFit.fill,
                           )
                         : Image.asset(
-                            "assets/images/shawarma.png",
+                            "${assetsMode}images/shawarma.png",
                             scale: 2.5.fSize,
                           ),
                   ),

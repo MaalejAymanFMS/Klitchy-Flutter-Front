@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:klitchyapp/utils/size_utils.dart';
 
+import '../utils/constants.dart';
+
 class WaiterTag extends StatelessWidget {
   final Color backgroundColor;
   final String image;
@@ -31,7 +33,7 @@ class WaiterTag extends StatelessWidget {
                 Radius.circular(35),
               ),
             ),
-            child: Image.asset("assets/images/$image"),
+            child: Image.asset("${assetsMode}images/$image"),
           ),
           SizedBox(width: 30.h,),
           Text(name, style: TextStyle(fontSize: 15.fSize),),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:klitchyapp/utils/size_utils.dart';
 
 import '../../config/app_colors.dart';
+import '../../utils/constants.dart';
 
 class Room extends StatelessWidget {
   final String title;
@@ -23,7 +24,7 @@ class Room extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              child: Image.asset("assets/images/logo.png"),
+              child: Image.asset("${assetsMode}images/logo.png"),
             ),
             SizedBox(
               width: 10,

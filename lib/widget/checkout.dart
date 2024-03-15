@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:klitchyapp/config/app_colors.dart';
 import 'package:klitchyapp/utils/AppState.dart';
 import 'package:http/http.dart' as http;
+import 'package:klitchyapp/utils/constants.dart';
 import 'package:klitchyapp/utils/size_utils.dart';
 import 'package:klitchyapp/views/gestion_de_table.dart';
 import 'package:pdf/pdf.dart';
@@ -402,7 +403,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                 BorderRadius.circular(10.0)),
                                       ),
                                       child: Image.asset(
-                                        'assets/images/cash.png',
+                                        '${assetsMode}images/cash.png',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -469,7 +470,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                 BorderRadius.circular(10.0)),
                                       ),
                                       child: Image.asset(
-                                        'assets/images/cheque.png',
+                                        '${assetsMode}images/cheque.png',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -535,7 +536,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                 BorderRadius.circular(10.0)),
                                       ),
                                       child: Image.asset(
-                                        'assets/images/wire.png',
+                                        '${assetsMode}images/wire.png',
                                         fit: BoxFit.cover,
                                       ),
                                     ),

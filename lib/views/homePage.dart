@@ -11,6 +11,7 @@ import 'package:klitchyapp/widget/pinScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../config/pos_params.dart';
+import '../utils/constants.dart';
 import '../viewmodels/pin_screen_vm.dart';
 
 class HomePage extends StatefulWidget {
@@ -54,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                 .map((waiterData) => Waiter(
                     name: waiterData['first_name'],
                     email: waiterData['email'],
-                    image: 'assets/images/waiter.png'))
+                    image: '${assetsMode}images/waiter.png'))
                 .toList();
             print('API request done with status code ${response.statusCode}');
           });
@@ -79,7 +80,7 @@ class _HomePageState extends State<HomePage> {
           Positioned(
             top: 50.v,
             child: Image.asset(
-              'assets/images/logo.png',
+              '${assetsMode}images/logo.png',
               width: 100.h,
               height: 100.v,
             ),

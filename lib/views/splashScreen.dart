@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:klitchyapp/utils/constants.dart';
 import 'package:klitchyapp/views/gestion_de_table.dart';
 import 'package:klitchyapp/views/homePage.dart';
 import 'package:klitchyapp/views/kitchen.dart';
@@ -52,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Row(
           children: [
             Image.asset(
-              '/images/splashScreen.png',
+              '${assetsMode}images/splashScreen.png',
               fit: BoxFit.cover,
               width: deviceSize.width,
               height: deviceSize.height,

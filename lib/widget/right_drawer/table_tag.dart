@@ -6,6 +6,7 @@ import 'package:virtual_keyboard_2/virtual_keyboard_2.dart';
 
 import '../../config/app_colors.dart';
 import '../../models/orders.dart';
+import '../../utils/constants.dart';
 import '../custom_button.dart';
 import '../entry_field.dart';
 
@@ -145,7 +146,7 @@ class _TableTagState extends State<TableTag> {
                 color: widget.appState.enableColorNotes,
               ),
               child: Image.asset(
-                "assets/images/modify.png",
+                "${assetsMode}images/modify.png",
                 color: Colors.white,
                 scale: 2.2.fSize,
               ),
@@ -201,7 +202,7 @@ class _TableTagState extends State<TableTag> {
                 color: widget.appState.enableColorDelete,
               ),
               child: Image.asset(
-                "assets/images/trash.png",
+                "${assetsMode}images/trash.png",
                 color: Colors.white,
                 scale: 2.2.fSize,
               ),

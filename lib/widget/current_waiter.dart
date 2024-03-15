@@ -3,6 +3,7 @@ import 'package:klitchyapp/utils/size_utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../config/app_colors.dart';
+import '../utils/constants.dart';
 import '../views/homePage.dart';
 
 class CurrentWaiter extends StatelessWidget {
@@ -67,7 +68,7 @@ class CurrentWaiter extends StatelessWidget {
         child: Row(
           children: [
             CircleAvatar(
-              child: Image.asset("assets/images/waiter.png"),
+              child: Image.asset("${assetsMode}images/waiter.png"),
             ),
             SizedBox(
               width: 19,
