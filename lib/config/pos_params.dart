@@ -18,7 +18,7 @@ class PosParams{
   static  String? debtors ;
   static  String? bank ;
   static Future<void> initialize() async {
-    await dotenv.load(fileName: ".env");
+    await dotenv.load(fileName: "../.env");
     apiURL = dotenv.env['apiURL']??"";
     erpnextURL = dotenv.env['erpnextURL']??"";
     token = dotenv.env['token']??"";
