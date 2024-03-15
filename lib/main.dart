@@ -11,7 +11,9 @@ import 'package:klitchyapp/utils/AppState.dart' as UtilAppState;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await PosParams.initialize();
-  setupLocator();
+  print(PosParams.token);
+ setupLocator();
+
   runApp(const MyApp());
 }
 

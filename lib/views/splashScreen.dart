@@ -18,9 +18,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<bool> getPrefs() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
+
     setState(() {
-      isUserLogin = prefs.getBool("isLoggedIn")!;
-      role = prefs.getString("role")!;
+      isUserLogin = prefs.getBool("isLoggedIn")??false;
+      role = prefs.getString("role")??"none";
     });
     return true;
   }
@@ -46,13 +47,12 @@ class _SplashScreenState extends State<SplashScreen> {
     });
 
     final deviceSize = MediaQuery.of(context).size;
-    print(deviceSize.width);
     return Scaffold(
       body: Center(
         child: Row(
           children: [
             Image.asset(
-              '../assets/images/splashScreen.png',
+              '/images/splashScreen.png',
               fit: BoxFit.cover,
               width: deviceSize.width,
               height: deviceSize.height,

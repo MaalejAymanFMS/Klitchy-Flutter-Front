@@ -537,7 +537,7 @@ class AppState extends ChangeNotifier {
   }
 
   void setSelectedOrder(kitchenOrderAppState.Order order) {
-    print(order.items![0]);
+    print(' order.items = '+ order.items![0].toString());
     selectedOrder = order;
     notifyListeners();
   }
