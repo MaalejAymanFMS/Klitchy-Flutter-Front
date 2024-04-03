@@ -32,6 +32,7 @@ migrate_working_dir/
 .pub/
 /build/
 api pos.postman_collection.json
+node_modules
 # Symbolication related
 app.*.symbols
 

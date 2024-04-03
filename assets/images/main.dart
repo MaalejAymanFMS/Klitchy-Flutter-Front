@@ -10,22 +10,19 @@ import 'package:klitchyapp/utils/AppState.dart' as UtilAppState;
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  await dotenv.load( fileName: 'images/.env');
+  await dotenv.load( fileName: '.env');
   await updateRemoteConfig();
-  await Firebase.initializeApp();
 
   runApp(MyApp());
 }
 
 
 Future<void> updateRemoteConfig() async {
-  final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance; ///mochkla fel star hedha 
+  final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
 
   String apiUrl = dotenv.env['apiURL'] ?? "";
   String erpnextURL = dotenv.env['erpnextURL'] ?? "";

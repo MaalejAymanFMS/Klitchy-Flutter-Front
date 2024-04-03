@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "935270743343",
+    "project_id": "fluttergp-8764e",
+    "storage_bucket": "fluttergp-8764e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935270743343:android:8dea91964d1587cea9b5da",
+        "android_client_info": {
+          "package_name": "com.example.klitchyapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJBxlePmHfK0ygXTZlfvTAmLndqQjunhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

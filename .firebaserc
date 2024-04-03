@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "pos-klitchy"
-  }
+    "default": "game-productionweb",
+    " ": "game-productionweb"
+  },
+  "targets": {},
+  "etags": {}
 }
