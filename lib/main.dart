@@ -1,6 +1,11 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:klitchyapp/config/pos_params.dart';
+import 'package:klitchyapp/firebase_options.dart';
 import 'package:klitchyapp/routes/routes.dart';
 import 'package:klitchyapp/utils/locator.dart';
 import 'package:klitchyapp/views/kitchen.dart';
@@ -15,56 +20,67 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  final remoteConfigInstance = FirebaseRemoteConfig.instance;
+await remoteConfigInstance.setConfigSettings(RemoteConfigSettings(
+    fetchTimeout: const Duration(minutes: 1),
+    minimumFetchInterval: const Duration(hours: 1),
+));
+ String? downloadURL = await _getDownloadURL("config/envv.json");
+  if (downloadURL != null) {
+    String? jsonString = await _readFileFromURL(downloadURL);
+    print(jsonString);
+    if (jsonString != null) {
+      Map<String, dynamic> config = jsonDecode(jsonString);
+      // Utilisez votre configuration ici
+    }
+  }
+setupLocator();
 
-  await dotenv.load( fileName: 'images/.env');
-  await updateRemoteConfig();
-  await Firebase.initializeApp();
-
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-
-Future<void> updateRemoteConfig() async {
-  final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance; ///mochkla fel star hedha 
-
-  String apiUrl = dotenv.env['apiURL'] ?? "";
-  String erpnextURL = dotenv.env['erpnextURL'] ?? "";
-  String token = dotenv.env['token'] ?? "";
-  String company = dotenv.env['company'] ?? "";
-  String productFilter = dotenv.env['productFilter'] ?? "";
-  String stores = dotenv.env['stores'] ?? "";
-  String cash = dotenv.env['cash'] ?? "";
-  String sales = dotenv.env['sales'] ?? "";
-  String main = dotenv.env['main'] ?? "";
-  String debtors = dotenv.env['debtors'] ?? "";
-  String bank = dotenv.env['bank'] ?? "";
-  print("bank : $bank");
-  await remoteConfig.setConfigSettings(RemoteConfigSettings(
-    fetchTimeout: const Duration(minutes: 2),
-    minimumFetchInterval: const Duration(hours: 1),
-  ));
-
-  await remoteConfig.setDefaults({
-    'api_url': apiUrl,
-    'erpnext_url': erpnextURL,
-    'token': token,
-    'company': company,
-    'product_filter': productFilter,
-    'stores': stores,
-    'cash': cash,
-    'sales': sales,
-    'main': main,
-    'debtors': debtors,
-    'bank': bank,
-  });
-
+Future<String> _getDownloadURL(String path) async {
+  final FirebaseStorage storage = FirebaseStorage.instance;
   try {
-    await remoteConfig.fetch();
-    await remoteConfig.activate();
+    String downloadURL = await storage.ref(path).getDownloadURL();
+    print("Successfully retrieved download URL: $downloadURL");
+    return downloadURL;
   } catch (e) {
-    print("Erreur lors de la récupération ou de l'activation de la configuration RemoteConfig : $e");
+    print("Error getting download URL: $e");
+    return '';
   }
 }
+
+Future<String?> _readFileFromURL(String? url) async {
+  if (url == null || url.isEmpty) {
+    print("URL is empty or null");
+    return null;
+  }
+final proxyUrl = 'https://cors-anywhere.herokuapp.com/$url';
+
+  try {
+    final response = await http.get(Uri.parse(proxyUrl), headers: {
+      'Access-Control-Allow-Origin': '*',  // ou 'https://votre-domaine.com' si vous connaissez l'origine
+    });
+    if (response.statusCode == 200) {
+      print("Received data: ${response.body}");
+    
+      return response.body;
+    } else {
+      print("Failed to load data from URL. Status code: ${response.statusCode}");
+      print("Received data: ${response.body}");
+      return null;
+    }
+  } catch (e) {
+    print("Error reading data from URL: $e");
+    return null;
+  }
+}
+  
+
 
 
 

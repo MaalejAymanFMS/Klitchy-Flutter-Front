@@ -1,8 +1,5 @@
 {
   "projects": {
-    "default": "game-productionweb",
-    " ": "game-productionweb"
-  },
-  "targets": {},
-  "etags": {}
+    "default": "pos--gp"
+  }
 }

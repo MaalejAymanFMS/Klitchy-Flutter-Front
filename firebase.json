@@ -1,20 +1,37 @@
 {
-  "functions": {
-    "source": "functions"
-   
-  },
   "hosting": {
-    "public": "build/web",
+    "source": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
+    "frameworksBackend": {
+      "region": "europe-west1"
+    }
+  },
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "pos--gp",
+          "configurations": {
+            "web": "1:466183494392:web:9153072e8d9c8a594c790d"
+          }
+        }
       }
-    ]
-  }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ]
+    }
+  ]
 }
