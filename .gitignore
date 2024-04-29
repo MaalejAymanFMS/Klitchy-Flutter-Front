@@ -33,6 +33,11 @@ migrate_working_dir/
 /build/
 api pos.postman_collection.json
 node_modules
+.firebaserc
+firebase.json
+package-lock.json
+package.json
+firebase_options.dart
 # Symbolication related
 app.*.symbols
 
